@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - Seat Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+        <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+            <option value="CHF">CHF (Fr)</option>
+            <option value="CNY">CNY (¥)</option>
+            <option value="SGD">SGD (S$)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SkyWings</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="booking.html">Book Flight</a>
+                <a href="seat-booking.html">Seat Booking</a>
+                <a href="flight-status.html">Flight Status</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="cancel-flight.html">Cancel Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Select Your Seats</h2>
+            
+            <div class="seat-info">
+                <div class="info-item">
+                    <div class="info-color" style="background: #28a745;"></div>
+                    <span>Available</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-color" style="background: #ffc107;"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-color" style="background: #dc3545;"></div>
+                    <span>Occupied</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-color" style="background: #fd7e14;"></div>
+                    <span>Emergency Exit</span>
+                </div>
+            </div>
+
+            <div class="seat-map">
+                <!-- Row 1 -->
+                <div class="seat" onclick="selectSeat(this)">1A</div>
+                <div class="seat" onclick="selectSeat(this)">1B</div>
+                <div class="seat occupied">1C</div>
+                <div class="seat occupied">1D</div>
+                <div class="seat" onclick="selectSeat(this)">1E</div>
+                <div class="seat" onclick="selectSeat(this)">1F</div>
+                
+                <!-- Row 2 -->
+                <div class="seat" onclick="selectSeat(this)">2A</div>
+                <div class="seat" onclick="selectSeat(this)">2B</div>
+                <div class="seat" onclick="selectSeat(this)">2C</div>
+                <div class="seat" onclick="selectSeat(this)">2D</div>
+                <div class="seat occupied">2E</div>
+                <div class="seat occupied">2F</div>
+                
+                <!-- Row 3 (Emergency Exit) -->
+                <div class="seat emergency" onclick="selectSeat(this)">3A</div>
+                <div class="seat emergency" onclick="selectSeat(this)">3B</div>
+                <div class="seat emergency" onclick="selectSeat(this)">3C</div>
+                <div class="seat emergency" onclick="selectSeat(this)">3D</div>
+                <div class="seat emergency" onclick="selectSeat(this)">3E</div>
+                <div class="seat emergency" onclick="selectSeat(this)">3F</div>
+                
+                <!-- Row 4 -->
+                <div class="seat" onclick="selectSeat(this)">4A</div>
+                <div class="seat" onclick="selectSeat(this)">4B</div>
+                <div class="seat" onclick="selectSeat(this)">4C</div>
+                <div class="seat" onclick="selectSeat(this)">4D</div>
+                <div class="seat" onclick="selectSeat(this)">4E</div>
+                <div class="seat occupied">4F</div>
+                
+                <!-- Row 5 -->
+                <div class="seat occupied">5A</div>
+                <div class="seat occupied">5B</div>
+                <div class="seat" onclick="selectSeat(this)">5C</div>
+                <div class="seat" onclick="selectSeat(this)">5D</div>
+                <div class="seat" onclick="selectSeat(this)">5E</div>
+                <div class="seat" onclick="selectSeat(this)">5F</div>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <h3>Selected Seats: <span id="selectedSeats">None</span></h3>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">Total Price: <span id="seatPrice">$0</span></p>
+                <button class="btn" onclick="confirmSeatSelection()" style="width: auto; padding: 1rem 3rem;">Confirm Seats</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkyWings Flight Management. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: #666;">✈️ Safe travels with SkyWings</p>
+    </footer>
+
+    <script src="currency.js"></script>
+    <script src="seat-booking.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

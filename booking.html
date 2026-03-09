@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - Book Flight</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+        <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+            <option value="CHF">CHF (Fr)</option>
+            <option value="CNY">CNY (¥)</option>
+            <option value="SGD">SGD (S$)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SkyWings</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="booking.html">Book Flight</a>
+                <a href="seat-booking.html">Seat Booking</a>
+                <a href="flight-status.html">Flight Status</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="cancel-flight.html">Cancel Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Book Your Flight</h2>
+            <div class="form-container" style="max-width: 600px;">
+                <form action="seat-booking.html" method="GET">
+                    <div class="form-group">
+                        <label>From</label>
+                        <select required>
+                            <option value="">Select Departure City</option>
+                            <option>New York (JFK)</option>
+                            <option>London (LHR)</option>
+                            <option>Tokyo (HND)</option>
+                            <option>Dubai (DXB)</option>
+                            <option>Singapore (SIN)</option>
+                            <option>Paris (CDG)</option>
+                            <option>Frankfurt (FRA)</option>
+                            <option>Sydney (SYD)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To</label>
+                        <select required>
+                            <option value="">Select Destination City</option>
+                            <option>New York (JFK)</option>
+                            <option>London (LHR)</option>
+                            <option>Tokyo (HND)</option>
+                            <option>Dubai (DXB)</option>
+                            <option>Singapore (SIN)</option>
+                            <option>Paris (CDG)</option>
+                            <option>Frankfurt (FRA)</option>
+                            <option>Sydney (SYD)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Departure Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Return Date (Optional)</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Passengers</label>
+                        <select required>
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3 Passengers</option>
+                            <option>4 Passengers</option>
+                            <option>5+ Passengers</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Class</label>
+                        <select required>
+                            <option>Economy</option>
+                            <option>Premium Economy</option>
+                            <option>Business Class</option>
+                            <option>First Class</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Search Flights</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkyWings Flight Management. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: #666;">✈️ Safe travels with SkyWings</p>
+    </footer>
+
+    <script src="currency.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

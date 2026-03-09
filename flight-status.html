@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - Flight Status</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+        <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+            <option value="CHF">CHF (Fr)</option>
+            <option value="CNY">CNY (¥)</option>
+            <option value="SGD">SGD (S$)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SkyWings</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="booking.html">Book Flight</a>
+                <a href="seat-booking.html">Seat Booking</a>
+                <a href="flight-status.html">Flight Status</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="cancel-flight.html">Cancel Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Flight Status</h2>
+            
+            <div class="form-container" style="max-width: 400px; margin-bottom: 2rem;">
+                <div class="form-group">
+                    <label>Enter Flight Number or Route</label>
+                    <input type="text" placeholder="e.g., SW123 or New York to London" id="flightSearch">
+                </div>
+                <button class="btn" onclick="searchFlightStatus()">Check Status</button>
+            </div>
+
+            <table class="flight-table">
+                <thead>
+                    <tr>
+                        <th>Flight</th>
+                        <th>Route</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SW101</td>
+                        <td>New York → London</td>
+                        <td>10:30 AM</td>
+                        <td>10:45 PM</td>
+                        <td><span class="status-badge status-on-time">On Time</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW202</td>
+                        <td>London → Tokyo</td>
+                        <td>09:15 AM</td>
+                        <td>10:30 AM (+1)</td>
+                        <td><span class="status-badge status-on-time">On Time</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW303</td>
+                        <td>Tokyo → Singapore</td>
+                        <td>02:45 PM</td>
+                        <td>08:30 PM</td>
+                        <td><span class="status-badge status-delayed">Delayed</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW404</td>
+                        <td>Dubai → Sydney</td>
+                        <td>11:20 PM</td>
+                        <td>06:15 PM (+1)</td>
+                        <td><span class="status-badge status-on-time">On Time</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW505</td>
+                        <td>Paris → New York</td>
+                        <td>07:30 AM</td>
+                        <td>10:15 AM</td>
+                        <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkyWings Flight Management. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: #666;">✈️ Safe travels with SkyWings</p>
+    </footer>
+
+    <script src="currency.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

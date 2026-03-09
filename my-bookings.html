@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - My Bookings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+        <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+            <option value="CHF">CHF (Fr)</option>
+            <option value="CNY">CNY (¥)</option>
+            <option value="SGD">SGD (S$)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SkyWings</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="booking.html">Book Flight</a>
+                <a href="seat-booking.html">Seat Booking</a>
+                <a href="flight-status.html">Flight Status</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="cancel-flight.html">Cancel Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">My Bookings</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('upcoming')">Upcoming Flights</button>
+                <button class="tab-btn" onclick="showTab('past')">Past Flights</button>
+                <button class="tab-btn" onclick="showTab('cancelled')">Cancelled</button>
+            </div>
+
+            <!-- Upcoming Flights Tab -->
+            <div id="upcomingTab" class="tab-content active">
+                <table class="flight-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Flight</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            <th>Seats</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BK001</td>
+                            <td>SW101</td>
+                            <td>2024-03-15</td>
+                            <td>NYC → LHR</td>
+                            <td>12A, 12B</td>
+                            <td class="currency-value" data-usd="850">$850</td>
+                            <td><button class="btn-secondary" style="padding: 0.3rem 1rem;" onclick="window.location.href='cancel-flight.html'">Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>BK002</td>
+                            <td>SW202</td>
+                            <td>2024-03-20</td>
+                            <td>LHR → TYO</td>
+                            <td>5C</td>
+                            <td class="currency-value" data-usd="1200">$1,200</td>
+                            <td><button class="btn-secondary" style="padding: 0.3rem 1rem;" onclick="window.location.href='cancel-flight.html'">Cancel</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Past Flights Tab -->
+            <div id="pastTab" class="tab-content">
+                <table class="flight-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Flight</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            <th>Seats</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BK089</td>
+                            <td>SW303</td>
+                            <td>2024-02-10</td>
+                            <td>TYO → SIN</td>
+                            <td>8A</td>
+                            <td class="currency-value" data-usd="950">$950</td>
+                            <td><span class="status-badge status-on-time">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>BK092</td>
+                            <td>SW404</td>
+                            <td>2024-02-05</td>
+                            <td>DXB → SYD</td>
+                            <td>15C, 15D</td>
+                            <td class="currency-value" data-usd="2100">$2,100</td>
+                            <td><span class="status-badge status-on-time">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cancelled Flights Tab -->
+            <div id="cancelledTab" class="tab-content">
+                <table class="flight-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Flight</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            <th>Refund Status</th>
+                            <th>Refund Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BK156</td>
+                            <td>SW505</td>
+                            <td>2024-02-28</td>
+                            <td>CDG → NYC</td>
+                            <td>Processed</td>
+                            <td class="currency-value" data-usd="680">$680</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkyWings Flight Management. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: #666;">✈️ Safe travels with SkyWings</p>
+    </footer>
+
+    <script src="currency.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

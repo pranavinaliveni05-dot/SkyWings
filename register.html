@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+        <select id="currencySelect" onchange="updateCurrency()">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+            <option value="CHF">CHF (Fr)</option>
+            <option value="CNY">CNY (¥)</option>
+            <option value="SGD">SGD (S$)</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SkyWings</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="booking.html">Book Flight</a>
+                <a href="seat-booking.html">Seat Booking</a>
+                <a href="flight-status.html">Flight Status</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="cancel-flight.html">Cancel Flight</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Create New Account</h2>
+            <div class="form-container">
+                <form action="login.html" method="GET">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Register</button>
+                    </div>
+                    <p style="text-align: center;">Already have an account? <a href="login.html">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SkyWings Flight Management. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: #666;">✈️ Safe travels with SkyWings</p>
+    </footer>
+
+    <script src="currency.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
